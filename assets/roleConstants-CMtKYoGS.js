@@ -1,0 +1,1 @@
+var e={ADMIN:`admin`,HR:`hr`,MANAGER:`manager`,EMPLOYEE:`employee`},t={[e.ADMIN]:`Administrator`,[e.HR]:`HR`,[e.MANAGER]:`Manager`,[e.EMPLOYEE]:`Employee`};Object.values(e),e.ADMIN,e.HR,e.MANAGER,e.ADMIN;export{t as n,e as t};

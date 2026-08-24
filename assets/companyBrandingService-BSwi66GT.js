@@ -1,0 +1,1 @@
+import{p as e,r as t,s as n,v as r,y as i}from"./firebase-DFdnA6uw.js";var a=r(t,`companySettings`,`branding`),o=async()=>{let e=await n(a);return e.exists()?e.data():{}},s=async({user:t,...n})=>{if(!t?.uid)throw Error(`You must be signed in.`);return await e(a,{...n,updatedBy:t.uid,updatedByEmail:t.email||``,updatedAt:i()},{merge:!0}),o()};export{s as n,o as t};
