@@ -1,0 +1,1 @@
+import{b as e,p as t,r as n,s as r,y as i}from"./firebase-trkDv-Op.js";var a=i(n,`companySettings`,`branding`),o=async()=>{let e=await r(a);return e.exists()?e.data():{}},s=async({user:n,...r})=>{if(!n?.uid)throw Error(`You must be signed in.`);return await t(a,{...r,updatedBy:n.uid,updatedByEmail:n.email||``,updatedAt:e()},{merge:!0}),o()};export{s as n,o as t};

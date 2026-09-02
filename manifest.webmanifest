@@ -1,26 +1,32 @@
 {
-  "name": "WorkSphere Business Management",
+  "name": "WorkSphere HRMS",
   "short_name": "WorkSphere",
-  "description": "WorkSphere employee and workplace management system",
-  "start_url": ".",
-  "scope": ".",
+  "description": "WorkSphere HRMS — Workforce Management System",
+  "start_url": "/WorkSphere-HRMS/",
+  "scope": "/WorkSphere-HRMS/",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#f8fafc",
-  "theme_color": "#0f172a",
+  "orientation": "any",
+  "background_color": "#07152d",
+  "theme_color": "#07152d",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/WorkSphere-HRMS/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "icon-512.png",
+      "src": "/WorkSphere-HRMS/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/WorkSphere-HRMS/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
-  "version": "1.0.40"
+  "version": "1.2.55"
 }

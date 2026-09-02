@@ -1,5 +1,5 @@
-const CACHE_NAME = "worksphere-shell-v1.0.40";
-const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon.svg", "./icon-192.png", "./icon-512.png"];
+const CACHE_NAME = "worksphere-shell-v1.2.55";
+const APP_SHELL = ["./", "./index.html", "./manifest.webmanifest", "./favicon.ico", "./favicon.svg", "./safari-pinned-tab.svg", "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png", "./icons/worksphere-icon.svg", "./icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
