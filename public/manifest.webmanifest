@@ -1,0 +1,32 @@
+{
+  "name": "WorkSphere HRMS",
+  "short_name": "WorkSphere",
+  "description": "WorkSphere HRMS — Workforce Management System",
+  "start_url": "/WorkSphere-HRMS/",
+  "scope": "/WorkSphere-HRMS/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07152d",
+  "theme_color": "#07152d",
+  "icons": [
+    {
+      "src": "/WorkSphere-HRMS/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/WorkSphere-HRMS/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/WorkSphere-HRMS/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "version": "1.0.46"
+}

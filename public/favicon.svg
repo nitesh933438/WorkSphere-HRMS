@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WorkSphere WS">
+  <defs>
+    <linearGradient id="bg" x1="64" y1="32" x2="448" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07152d"/>
+      <stop offset="1" stop-color="#020817"/>
+    </linearGradient>
+    <linearGradient id="w" x1="110" y1="165" x2="386" y2="370" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa"/>
+      <stop offset="0.48" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <rect x="18" y="18" width="476" height="476" rx="108" fill="url(#bg)"/>
+  <rect x="20" y="20" width="472" height="472" rx="106" fill="none" stroke="#1e3a5f" stroke-width="4"/>
+  <g filter="url(#shadow)">
+    <!-- Stylized W -->
+    <path d="M91 157 L139 157 L177 290 L220 184 L256 184 L299 290 L337 157 L385 157 L327 355 L286 355 L238 245 L190 355 L149 355 Z" fill="url(#w)"/>
+    <!-- Interlocking S ribbon -->
+    <path d="M335 116 C287 116 254 132 238 157 C222 182 226 208 256 224 L321 258 C337 267 340 277 332 287 C323 300 307 305 286 305 L248 305 L229 348 L291 348 C337 348 372 333 389 306 C407 277 401 247 369 229 L305 194 C291 186 288 177 296 168 C304 158 317 154 336 154 L369 154 L389 116 Z" fill="#f8fafc"/>
+    <path d="M104 383 H408" stroke="#60a5fa" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+  </g>
+  <circle cx="410" cy="105" r="13" fill="#38bdf8"/>
+</svg>
