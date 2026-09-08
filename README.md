@@ -6,8 +6,38 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/nitesh933438/WorkSphere-HRMS">GitHub Repository</a>
+  <a href="https://github.com/nitesh933438/WorkSphere-HRMS">GitHub Repository</a> •
+  <a href="https://nitesh933438.github.io/WorkSphere-HRMS/">Live Demo</a>
 </p>
+
+<p align="center">
+  <img src="public/icon-192.png" width="88" alt="WorkSphere HRMS Logo">
+</p>
+
+<p align="center">
+  <strong>Admin • HR • Manager • Employee</strong><br>
+  Real-time, role-based HR operations with attendance geofencing, payroll, documents, requests and notifications.
+</p>
+
+---
+
+# ✨ Highlights
+
+- 🔐 **Role-based access** for Admin, HR, Manager and Employee
+- 🕒 **Attendance management** with configurable office timing, working days and live-location geofencing
+- 📍 **Live GPS diagnostics** showing detected coordinates, accuracy and distance from the configured office
+- 📝 **Attendance/request workflows** for situations that require review or manual handling
+- 💰 **Payroll management** with earnings, deductions, payable calculations and salary history
+- 🧾 **Professional salary slips** with print and PDF-friendly output
+- 🏖️ **Leave management** with role-aware review and approval workflows
+- 📄 **Document management** with role-based visibility and Cloudinary-backed uploads when configured
+- 📢 **Announcements** for company-wide communication
+- 🔔 **Real-time notifications** for personal, company-wide and management audiences
+- ✅ **Notification read state** with Mark as Read / Mark All as Read and per-user `readBy` synchronization
+- 🔄 **Real-time notification badge** across supported pages, refreshes and sessions
+- 📱 **Responsive UI + PWA support** for desktop, laptop, tablet and mobile experiences
+- 🎨 **Consistent WorkSphere branding** with the WS application icon and favicon
+- 🚀 **GitHub Actions + GitHub Pages** deployment workflow
 
 ---
 
@@ -343,6 +373,39 @@ Employee access is limited to permitted personal and employee-level information.
 
 ---
 
+# 📍 Attendance & Live Location
+
+WorkSphere HRMS includes a configurable attendance policy designed for office-based attendance.
+
+### Attendance policy
+
+- Office start and end time
+- Late-after time
+- Break start and end time
+- Working-day configuration
+- Office latitude and longitude
+- Attendance radius in meters
+- Optional location requirement
+
+### Live-location verification
+
+When location-based attendance is enabled, the browser requests a fresh geolocation reading and the application checks the distance between the employee's live location and the configured office location.
+
+The attendance experience also provides diagnostics for:
+
+- Current latitude
+- Current longitude
+- Browser-reported GPS accuracy
+- Distance from the configured office
+- Allowed attendance radius
+- Saved office coordinates
+
+The location flow uses fresh readings and prefers the most accurate available reading to reduce stale/network-derived desktop location problems.
+
+> Browser/device location permission and operating-system location services must be enabled for live GPS verification to work correctly.
+
+---
+
 # 🕒 Attendance → Payroll Workflow
 
 ```text
@@ -419,14 +482,28 @@ The system includes leave-management workflows for role-based leave operations.
 
 # 📢 Announcements & 🔔 Notifications
 
-Role-aware communication features provide updates such as:
+WorkSphere HRMS provides a role-aware, real-time communication system.
 
-- Company announcements
-- Attendance-related updates
-- Payroll updates
-- Management notifications
-- System notifications
-- Employee notifications
+### Notification audiences
+
+- 👤 **Personal** — delivered to a specific employee/user
+- 🏢 **Company-wide** — visible to authorized users across the company
+- 🧑‍💼 **Management** — available to Admin, HR and Manager users according to access rules
+
+### Notification behavior
+
+- Real-time Firestore synchronization
+- Unread badge/count updates without waiting for a periodic refresh
+- **Mark as Read** for individual notifications
+- **Mark All as Read** for the current user
+- Per-user read state for shared notifications through `readBy`
+- Per-user dismissal state through `dismissedBy`
+- New notifications appear in real time
+- Read state remains synchronized after refresh/login and across supported sessions
+- Role-aware notification visibility
+- Notification links can open the relevant application area
+
+This design keeps a shared company notification unread for other users while allowing each user to maintain their own read state.
 
 ---
 
@@ -505,6 +582,7 @@ WorkSphere HRMS uses Firebase authentication and role-aware application access.
 - Cloudinary
 - CORS
 - Express File Upload
+- Browser Geolocation API
 
 ### Deployment
 
@@ -603,21 +681,19 @@ WorkSphere-HRMS/
 
 # 📸 Screenshot Inventory
 
-The repository currently contains the following role-wise visual assets:
+The repository includes role-wise visual documentation under `screenshots/`.
 
-| Area | Count |
-|---|---:|
-| 🔐 Authentication | 1 |
-| 👑 Admin | 15 |
-| 🧑‍💼 Manager | 14 |
-| 👩‍💼 HR | 14 |
-| 👨‍💻 Employee | 13 |
-| 🧾 Salary Slip PDF | 1 |
-| 🎬 Role GIFs | 4 |
-| **Role screenshots + login + PDF** | **58** |
-| **All screenshots + GIFs** | **62** |
+- 🔐 Authentication
+- 👑 Admin
+- 🧑‍💼 Manager
+- 👩‍💼 HR
+- 👨‍💻 Employee
+- 🧾 Salary-slip PDF preview
+- 🎬 Role-wise GIF demos
 
-> The counts above exclude application icons and the workspace file. They are based on the visual assets present in this project ZIP.
+The screenshot section above intentionally keeps the role structure and displays **two screenshots per row** wherever two assets are available.
+
+> Keep screenshot filenames aligned with the paths referenced in this README when adding or replacing visual documentation.
 
 ---
 
@@ -693,6 +769,19 @@ npm run dev
 
 ---
 
+# 🧪 Release Checks
+
+Before pushing a release, you can run:
+
+```bash
+npm run build
+npm run audit:release
+```
+
+The build process also runs the version synchronization script through the `prebuild` hook.
+
+---
+
 # 🏗️ Production Build
 
 ```bash
@@ -761,7 +850,29 @@ backend/
 
 ---
 
+# 📱 PWA & Responsive Design
+
+The application is built to work across:
+
+- 🖥️ Desktop
+- 💻 Laptop
+- 📱 Mobile
+- 📟 Tablet
+
+The project also includes PWA assets and service-worker support:
+
+- Web app manifest
+- WorkSphere application icons
+- Favicon
+- Service worker
+- Installable experience where the browser/platform supports PWA installation
+
+> Installation behavior depends on browser and operating-system support. iOS Safari uses its own Add to Home Screen flow.
+
+---
+
 # 📱 Responsive Design
+
 
 Designed for:
 
@@ -834,6 +945,8 @@ Reports / Announcements / Notifications
 
 <div align="center">
 
-**WorkSphere HRMS — Role-based HR management made simple.**
+**WorkSphere HRMS — Modern, role-based HR management with real-time workflows.**
+
+[Live Demo](https://nitesh933438.github.io/WorkSphere-HRMS/) • [GitHub Repository](https://github.com/nitesh933438/WorkSphere-HRMS)
 
 </div>
