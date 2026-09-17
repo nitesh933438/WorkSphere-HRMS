@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import packageInfo from "./package.json" with { type: "json" };
 
 export default defineConfig({
-  base: "/",
+  base: "/WorkSphere-HRMS/",
 
   plugins: [react(), tailwindcss()],
 
